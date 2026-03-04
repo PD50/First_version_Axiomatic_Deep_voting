@@ -22,6 +22,12 @@ from generate_data import generate_profile_data, pad_profile_data
 from generate_data import onehot_profile_data
 import models
 from models import MLP, CNN, WEC
+from set_transformer import (
+    SetTransformer,
+    SetTransformer2logits,
+    SetTransformer2rule,
+    SetTransformer2rule_n,
+)
 import train_and_eval
 import axioms_continuous
 
@@ -214,8 +220,8 @@ def experiment3(
     start_time = time.time()
 
     assert (
-        architecture in ['MLP', 'CNN', 'WEC']
-    ), f"The supported architectures are 'MLP', 'CNN', and 'WEC' but {architecture} was given"
+        architecture in ['MLP', 'CNN', 'WEC', 'SetTransformer']
+    ), f"The supported architectures are 'MLP', 'CNN', 'WEC', and 'SetTransformer' but {architecture} was given"
 
     if architecture_parameters is None:
         if architecture == 'CNN':
@@ -229,6 +235,14 @@ def experiment3(
                 'we_size':100, 
                 'we_window':5, 
                 'we_algorithm':1}
+        if architecture == 'SetTransformer':
+            architecture_parameters = {
+                'd_model': 128,
+                'n_heads': 4,
+                'd_head': 32,
+                'n_encoder_layers': 4,
+                'pma_outputs': 1,
+            }
  
     # Distance functions for computing continuous versions of axioms 
     KLD = lambda x, y : nn.KLDivLoss(log_target=True, reduction='batchmean')(x.log_softmax(dim=1), y.log_softmax(dim=1))
@@ -259,7 +273,7 @@ def experiment3(
     prob_model = election_sampling['probmodel']
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     location = f"./results/exp3/{architecture}/exp3_{current_time}_{prob_model}"
-    os.mkdir(location)
+    os.makedirs(location, exist_ok=True)
     print(f'Saving location: {location}')
 
 
@@ -422,6 +436,23 @@ def experiment3(
             weight_decay=weight_decay
         )
         model_on_profiles = lambda X : models.WEC2logits(exp_model,X)
+
+    if architecture == 'SetTransformer':
+        exp_model = SetTransformer(
+            max_num_voters,
+            max_num_alternatives,
+            d_model=architecture_parameters.get('d_model', 128),
+            n_heads=architecture_parameters.get('n_heads', 4),
+            d_head=architecture_parameters.get('d_head', 32),
+            n_encoder_layers=architecture_parameters.get('n_encoder_layers', 4),
+            pma_outputs=architecture_parameters.get('pma_outputs', 1),
+        )
+        exp_optimizer = torch.optim.AdamW(
+            exp_model.parameters(),
+            lr=learning_rate,
+            weight_decay=weight_decay
+        )
+        model_on_profiles = lambda X : SetTransformer2logits(exp_model, X)
 
     # Load the previous state of the model if given
     if load_model_from is not None:
@@ -623,6 +654,23 @@ def experiment3(
                         )
                 if model_to_rule['neut-anon-averaged'] != False:
                     print('Neut-anon-averaging is not needed for WEC since anonymous by construction')
+
+            if architecture == 'SetTransformer':
+                if model_to_rule['plain'] == True:
+                    model_rule = SetTransformer2rule(exp_model)
+                    model_rule_full = SetTransformer2rule(exp_model, full=True)
+                if model_to_rule['neut-averaged'] != False:
+                    model_rule_n = SetTransformer2rule_n(
+                        exp_model,
+                        model_to_rule['neut-averaged']
+                        )
+                    model_rule_n_full = SetTransformer2rule_n(
+                        exp_model,
+                        model_to_rule['neut-averaged'],
+                        full=True
+                        )
+                if model_to_rule['neut-anon-averaged'] != False:
+                    print('Neut-anon-averaging is not needed for SetTransformer since anonymous by construction')
 
 
             # Loss on the last gradient step
@@ -894,7 +942,15 @@ def experiment3(
         if model_to_rule['neut-anon-averaged'] != False:
             print('Neut-anon-averaging is not implemented for WEC')
 
-
+    if architecture == 'SetTransformer':
+        if model_to_rule['plain'] == True:
+            model_rule = SetTransformer2rule(exp_model)
+            model_rule_full = SetTransformer2rule(exp_model, full=True)
+        if model_to_rule['neut-averaged'] != False:
+            model_rule_n = SetTransformer2rule_n(exp_model, model_to_rule['neut-averaged'])
+            model_rule_n_full = SetTransformer2rule_n(exp_model, model_to_rule['neut-averaged'], full=True)
+        if model_to_rule['neut-anon-averaged'] != False:
+            print('Neut-anon-averaging is not needed for SetTransformer since anonymous by construction')
 
 
     # Admissability

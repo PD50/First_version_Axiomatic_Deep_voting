@@ -876,7 +876,8 @@ def exp3_table(
         file_rules=None,
         file_MLP=None,
         file_CNN=None,
-        file_WEC=None):
+        file_WEC=None,
+        file_Transformer=None):
     """
     Plots as table the axiom satisfaction of th provided rules and models.
 
@@ -1160,10 +1161,85 @@ def exp3_table(
 
 
 
+    # Dataframe with results from Transformer
+
+    if file_Transformer is None:
+        df_Transformer = None
+    else:
+        if isinstance(file_Transformer, str):
+            list_of_files = [file_Transformer]
+        if isinstance(file_Transformer, list):
+            list_of_files = file_Transformer
+
+        dfs_Transformer = []
+        for file in list_of_files:
+            with open(f"{file}/results.json") as json_file:
+                exp_data = json.load(json_file)
+
+            # Plain axiom satisfaction
+            if exp_data["axiom_satisfaction"]["model_plain"] is not None:
+                axiom_sat_plain = [
+                    exp_data["axiom_satisfaction"]["model_plain"]["Anonymity"]["cond_satisfaction"],
+                    exp_data["axiom_satisfaction"]["model_plain"]["Neutrality"]["cond_satisfaction"],
+                    exp_data["axiom_satisfaction"]["model_plain"]["Condorcet"]["cond_satisfaction"],
+                    exp_data["axiom_satisfaction"]["model_plain"]["Pareto"]["cond_satisfaction"],
+                    exp_data["axiom_satisfaction"]["model_plain"]["Independence"]["cond_satisfaction"],
+                ]
+                axiom_sat_plain.append(sum(axiom_sat_plain)/len(axiom_sat_plain))
+                axiom_sat_plain = [round(100*itm, 1) for itm in axiom_sat_plain]
+            else:
+                axiom_sat_plain = None
+
+            # Neut-averaged axiom satisfaction
+            if exp_data["axiom_satisfaction"]["model_neut"] is not None:
+                axiom_sat_neut = []
+                if "Anonymity" in exp_data["axiom_satisfaction"]["model_neut"]:
+                    axiom_sat_neut.append(exp_data["axiom_satisfaction"]["model_neut"]["Anonymity"]["cond_satisfaction"])
+                else:
+                    axiom_sat_neut.append(1.0)
+                if "Neutrality" in exp_data["axiom_satisfaction"]["model_neut"]:
+                    axiom_sat_neut.append(exp_data["axiom_satisfaction"]["model_neut"]["Neutrality"]["cond_satisfaction"])
+                else:
+                    axiom_sat_neut.append(1.0)
+                axiom_sat_neut += [
+                    exp_data["axiom_satisfaction"]["model_neut"]["Condorcet"]["cond_satisfaction"],
+                    exp_data["axiom_satisfaction"]["model_neut"]["Pareto"]["cond_satisfaction"],
+                    exp_data["axiom_satisfaction"]["model_neut"]["Independence"]["cond_satisfaction"],
+                ]
+                axiom_sat_neut.append(sum(axiom_sat_neut)/len(axiom_sat_neut))
+                axiom_sat_neut = [round(100*itm, 1) for itm in axiom_sat_neut]
+            else:
+                axiom_sat_neut = None
+
+            # Collect the axioms the model optimized for
+            optimized_for = []
+            for k,v in exp_data["axiom_opt"].items():
+                if v is not None:
+                    optimized_for.append(optimization[k])
+            optimized_for = ', '.join(optimized_for)
+
+            index = []
+            if axiom_sat_plain is not None:
+                index.append(f'Transformer p ({optimized_for})')
+            if axiom_sat_neut is not None:
+                index.append(f'Transformer n ({optimized_for})')
+
+            df_Transformer = pd.DataFrame(
+                data=[i for i in [axiom_sat_plain, axiom_sat_neut]
+                      if i is not None],
+                index=index,
+                columns=columns_axioms
+            )
+            dfs_Transformer.append(df_Transformer)
+
+        df_Transformer = sum(dfs_Transformer)/len(dfs_Transformer)
+
+
+
     # Marge all dataframes
 
     # Collect all dfs, if not None
-    list_of_dfs = [i for i in [df_rules,df_MLP, df_CNN, df_WEC] 
+    list_of_dfs = [i for i in [df_rules, df_MLP, df_CNN, df_WEC, df_Transformer] 
                    if isinstance(i, pd.DataFrame)]
 
     df = pd.concat(list_of_dfs)
