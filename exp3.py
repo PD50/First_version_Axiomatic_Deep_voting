@@ -22,7 +22,7 @@ from generate_data import generate_profile_data, pad_profile_data
 from generate_data import onehot_profile_data
 import models
 from models import MLP, CNN, WEC
-from set_transformer import (
+from set_transformer_models import (
     SetTransformer,
     SetTransformer2logits,
     SetTransformer2rule,

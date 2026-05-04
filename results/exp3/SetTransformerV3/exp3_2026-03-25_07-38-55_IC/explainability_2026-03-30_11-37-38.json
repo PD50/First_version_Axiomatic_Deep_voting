@@ -1,0 +1,314 @@
+{
+  "model_vs_rules": {
+    "Stable Voting": {
+      "identity_accu": 83.69,
+      "subset_accu": 99.52,
+      "superset_accu": 83.69,
+      "overlap_accu": 83.76,
+      "hamming": 0.06314
+    },
+    "Blacks": {
+      "identity_accu": 83.24,
+      "subset_accu": 99.42,
+      "superset_accu": 83.24,
+      "overlap_accu": 83.66,
+      "hamming": 0.06454
+    },
+    "Weak Nanson": {
+      "identity_accu": 82.33,
+      "subset_accu": 99.6,
+      "superset_accu": 82.33,
+      "overlap_accu": 83.84,
+      "hamming": 0.07027
+    },
+    "Copeland": {
+      "identity_accu": 81.96,
+      "subset_accu": 99.85,
+      "superset_accu": 81.96,
+      "overlap_accu": 84.09,
+      "hamming": 0.08456
+    },
+    "Kemeny-Young": {
+      "identity_accu": 81.7,
+      "subset_accu": 99.71,
+      "superset_accu": 81.7,
+      "overlap_accu": 83.95,
+      "hamming": 0.08094
+    },
+    "Baldwin": {
+      "identity_accu": 81.09,
+      "subset_accu": 99.35,
+      "superset_accu": 81.09,
+      "overlap_accu": 83.59,
+      "hamming": 0.07975
+    },
+    "Llull": {
+      "identity_accu": 80.85,
+      "subset_accu": 99.88,
+      "superset_accu": 80.85,
+      "overlap_accu": 84.12,
+      "hamming": 0.09461
+    },
+    "Borda": {
+      "identity_accu": 80.65,
+      "subset_accu": 98.41,
+      "superset_accu": 80.65,
+      "overlap_accu": 82.65,
+      "hamming": 0.07659
+    },
+    "Instant Runoff TB": {
+      "identity_accu": 79.43,
+      "subset_accu": 95.19,
+      "superset_accu": 79.43,
+      "overlap_accu": 79.43,
+      "hamming": 0.06604
+    },
+    "Coombs": {
+      "identity_accu": 79.01,
+      "subset_accu": 96.44,
+      "superset_accu": 79.01,
+      "overlap_accu": 80.68,
+      "hamming": 0.08485
+    },
+    "Uncovered Set": {
+      "identity_accu": 78.01,
+      "subset_accu": 99.88,
+      "superset_accu": 78.01,
+      "overlap_accu": 84.12,
+      "hamming": 0.11416
+    },
+    "Top Cycle": {
+      "identity_accu": 78.01,
+      "subset_accu": 99.91,
+      "superset_accu": 78.01,
+      "overlap_accu": 84.15,
+      "hamming": 0.15529
+    },
+    "Banks": {
+      "identity_accu": 78.01,
+      "subset_accu": 99.9,
+      "superset_accu": 78.01,
+      "overlap_accu": 84.14,
+      "hamming": 0.11639
+    },
+    "PluralityWRunoff PUT": {
+      "identity_accu": 75.95,
+      "subset_accu": 97.3,
+      "superset_accu": 75.95,
+      "overlap_accu": 81.54,
+      "hamming": 0.1016
+    },
+    "Plurality": {
+      "identity_accu": 70.04,
+      "subset_accu": 91.9,
+      "superset_accu": 70.04,
+      "overlap_accu": 76.14,
+      "hamming": 0.12578
+    },
+    "Anti-Plurality": {
+      "identity_accu": 62.79,
+      "subset_accu": 87.73,
+      "superset_accu": 62.79,
+      "overlap_accu": 71.97,
+      "hamming": 0.16305
+    }
+  },
+  "top_rules": [
+    "Stable Voting",
+    "Blacks",
+    "Weak Nanson",
+    "Copeland",
+    "Kemeny-Young",
+    "Baldwin"
+  ],
+  "identity_table": {
+    "SetTransV3 n": {
+      "SetTransV3 n": 100.0,
+      "Stable Voting": 83.7,
+      "Blacks": 83.2,
+      "Weak Nanson": 82.3,
+      "Copeland": 82.0,
+      "Kemeny-Young": 81.7,
+      "Baldwin": 81.1
+    },
+    "Stable Voting": {
+      "SetTransV3 n": 83.7,
+      "Stable Voting": 100.0,
+      "Blacks": 95.5,
+      "Weak Nanson": 93.4,
+      "Copeland": 92.0,
+      "Kemeny-Young": 91.7,
+      "Baldwin": 90.4
+    },
+    "Blacks": {
+      "SetTransV3 n": 83.2,
+      "Stable Voting": 95.5,
+      "Blacks": 100.0,
+      "Weak Nanson": 91.6,
+      "Copeland": 90.8,
+      "Kemeny-Young": 89.1,
+      "Baldwin": 88.0
+    },
+    "Weak Nanson": {
+      "SetTransV3 n": 82.3,
+      "Stable Voting": 93.4,
+      "Blacks": 91.6,
+      "Weak Nanson": 100.0,
+      "Copeland": 92.2,
+      "Kemeny-Young": 95.1,
+      "Baldwin": 94.7
+    },
+    "Copeland": {
+      "SetTransV3 n": 82.0,
+      "Stable Voting": 92.0,
+      "Blacks": 90.8,
+      "Weak Nanson": 92.2,
+      "Copeland": 100.0,
+      "Kemeny-Young": 90.3,
+      "Baldwin": 89.5
+    },
+    "Kemeny-Young": {
+      "SetTransV3 n": 81.7,
+      "Stable Voting": 91.7,
+      "Blacks": 89.1,
+      "Weak Nanson": 95.1,
+      "Copeland": 90.3,
+      "Kemeny-Young": 100.0,
+      "Baldwin": 96.7
+    },
+    "Baldwin": {
+      "SetTransV3 n": 81.1,
+      "Stable Voting": 90.4,
+      "Blacks": 88.0,
+      "Weak Nanson": 94.7,
+      "Copeland": 89.5,
+      "Kemeny-Young": 96.7,
+      "Baldwin": 100.0
+    }
+  },
+  "subset_table": {
+    "SetTransV3 n": {
+      "SetTransV3 n": 100.0,
+      "Stable Voting": 83.7,
+      "Blacks": 83.2,
+      "Weak Nanson": 82.3,
+      "Copeland": 82.0,
+      "Kemeny-Young": 81.7,
+      "Baldwin": 81.1
+    },
+    "Stable Voting": {
+      "SetTransV3 n": 99.5,
+      "Stable Voting": 100.0,
+      "Blacks": 96.5,
+      "Weak Nanson": 94.5,
+      "Copeland": 92.1,
+      "Kemeny-Young": 92.0,
+      "Baldwin": 91.3
+    },
+    "Blacks": {
+      "SetTransV3 n": 99.4,
+      "Stable Voting": 96.9,
+      "Blacks": 100.0,
+      "Weak Nanson": 92.8,
+      "Copeland": 91.5,
+      "Kemeny-Young": 90.0,
+      "Baldwin": 89.0
+    },
+    "Weak Nanson": {
+      "SetTransV3 n": 99.6,
+      "Stable Voting": 97.6,
+      "Blacks": 95.7,
+      "Weak Nanson": 100.0,
+      "Copeland": 94.1,
+      "Kemeny-Young": 95.3,
+      "Baldwin": 94.8
+    },
+    "Copeland": {
+      "SetTransV3 n": 99.9,
+      "Stable Voting": 99.4,
+      "Blacks": 98.0,
+      "Weak Nanson": 97.4,
+      "Copeland": 100.0,
+      "Kemeny-Young": 95.1,
+      "Baldwin": 94.3
+    },
+    "Kemeny-Young": {
+      "SetTransV3 n": 99.7,
+      "Stable Voting": 99.2,
+      "Blacks": 96.7,
+      "Weak Nanson": 99.4,
+      "Copeland": 94.6,
+      "Kemeny-Young": 100.0,
+      "Baldwin": 98.6
+    },
+    "Baldwin": {
+      "SetTransV3 n": 99.4,
+      "Stable Voting": 97.4,
+      "Blacks": 94.8,
+      "Weak Nanson": 97.9,
+      "Copeland": 94.3,
+      "Kemeny-Young": 97.5,
+      "Baldwin": 100.0
+    }
+  },
+  "eval_dataset_size": 10000,
+  "max_num_voters": 55,
+  "max_num_alternatives": 5,
+  "nwec_benchmarks": {
+    "WEC n (NW,C,P)": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 96.78,
+      "Pareto": 100,
+      "Indep": 45.9,
+      "Avg": 88.54
+    }
+  },
+  "v2_results": {
+    "SetTransV2 n (NW,C,P)": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 100,
+      "Pareto": 100,
+      "Indep": 76.0,
+      "Avg": 95.2
+    }
+  },
+  "checkpoint_path": "./results/exp3/SetTransformerV3/exp3_2026-03-25_07-38-55_IC/model.pth",
+  "config": {
+    "architecture": "SetTransformerV3",
+    "max_num_voters": 55,
+    "max_num_alternatives": 5,
+    "election_sampling": {
+      "probmodel": "IC"
+    },
+    "num_gradient_steps": 12000,
+    "d_model": 128,
+    "n_heads": 8,
+    "d_ff": 512,
+    "n_enc_layers": 6,
+    "n_inducing": 32,
+    "dropout": 0.1,
+    "batch_size": 48,
+    "learning_rate": 0.0008,
+    "warmup_steps": 800,
+    "grad_clip": 0.5,
+    "weight_decay": 0.02,
+    "axiom_opt": {
+      "No_winner": "{'weight': 10, 'period': 'always'}",
+      "All_winners": "None",
+      "Inadmissible": "None",
+      "Resoluteness": "None",
+      "Parity": "None",
+      "Anonymity": "None",
+      "Neutrality": "None",
+      "Condorcet1": "{'weight': 2, 'period': 'always'}",
+      "Condorcet2": "None",
+      "Pareto1": "None",
+      "Pareto2": "{'weight': 1, 'period': 'always'}",
+      "Independence": "None"
+    },
+    "distance": "KLD",
+    "random_seed": 42
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "distribution_robustness": {
+    "IC": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 93.0,
+        "Pareto": 100.0,
+        "Independence": 73.0,
+        "Average": 93.2
+      },
+      "rule_agreement": {
+        "Stable Voting": {
+          "identity_accu": 85.2,
+          "subset_accu": 99.6,
+          "superset_accu": 85.2
+        },
+        "Blacks": {
+          "identity_accu": 85.0,
+          "subset_accu": 99.2,
+          "superset_accu": 85.0
+        },
+        "Weak Nanson": {
+          "identity_accu": 83.2,
+          "subset_accu": 99.4,
+          "superset_accu": 83.2
+        },
+        "Baldwin": {
+          "identity_accu": 82.6,
+          "subset_accu": 99.0,
+          "superset_accu": 82.6
+        },
+        "Kemeny-Young": {
+          "identity_accu": 82.8,
+          "subset_accu": 100.0,
+          "superset_accu": 82.8
+        },
+        "Borda": {
+          "identity_accu": 82.4,
+          "subset_accu": 98.2,
+          "superset_accu": 82.4
+        },
+        "Copeland": {
+          "identity_accu": 83.2,
+          "subset_accu": 100.0,
+          "superset_accu": 83.2
+        }
+      },
+      "nwec_benchmark": {
+        "WEC n (NW,C,P)": {
+          "Anon": 100,
+          "Neut": 100,
+          "Condorcet": 96.78,
+          "Pareto": 100,
+          "Indep": 45.9,
+          "Avg": 88.54
+        }
+      }
+    },
+    "Mallows": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 97.0,
+        "Pareto": 100.0,
+        "Independence": 68.0,
+        "Average": 93.0
+      },
+      "rule_agreement": {
+        "Stable Voting": {
+          "identity_accu": 85.8,
+          "subset_accu": 99.6,
+          "superset_accu": 85.8
+        },
+        "Blacks": {
+          "identity_accu": 85.2,
+          "subset_accu": 99.6,
+          "superset_accu": 85.2
+        },
+        "Weak Nanson": {
+          "identity_accu": 84.2,
+          "subset_accu": 99.4,
+          "superset_accu": 84.2
+        },
+        "Baldwin": {
+          "identity_accu": 83.8,
+          "subset_accu": 99.8,
+          "superset_accu": 83.8
+        },
+        "Kemeny-Young": {
+          "identity_accu": 84.0,
+          "subset_accu": 99.8,
+          "superset_accu": 84.0
+        },
+        "Borda": {
+          "identity_accu": 82.2,
+          "subset_accu": 98.6,
+          "superset_accu": 82.2
+        },
+        "Copeland": {
+          "identity_accu": 84.6,
+          "subset_accu": 99.6,
+          "superset_accu": 84.6
+        }
+      },
+      "nwec_benchmark": {
+        "WEC n (NW,C,P)": {
+          "Anon": 100,
+          "Neut": 100,
+          "Condorcet": 97.0,
+          "Pareto": 100,
+          "Indep": 44.0,
+          "Avg": 88.2
+        }
+      }
+    },
+    "Urn": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 98.0,
+        "Pareto": 100.0,
+        "Independence": 71.0,
+        "Average": 93.8
+      },
+      "rule_agreement": {
+        "Stable Voting": {
+          "identity_accu": 82.0,
+          "subset_accu": 99.6,
+          "superset_accu": 82.0
+        },
+        "Blacks": {
+          "identity_accu": 81.4,
+          "subset_accu": 99.0,
+          "superset_accu": 81.4
+        },
+        "Weak Nanson": {
+          "identity_accu": 80.8,
+          "subset_accu": 99.8,
+          "superset_accu": 80.8
+        },
+        "Baldwin": {
+          "identity_accu": 80.4,
+          "subset_accu": 99.8,
+          "superset_accu": 80.4
+        },
+        "Kemeny-Young": {
+          "identity_accu": 80.6,
+          "subset_accu": 100.0,
+          "superset_accu": 80.6
+        },
+        "Borda": {
+          "identity_accu": 78.6,
+          "subset_accu": 97.8,
+          "superset_accu": 78.6
+        },
+        "Copeland": {
+          "identity_accu": 79.8,
+          "subset_accu": 100.0,
+          "superset_accu": 79.8
+        }
+      },
+      "nwec_benchmark": {
+        "WEC n (NW,C,P)": {
+          "Anon": 100,
+          "Neut": 100,
+          "Condorcet": 93.5,
+          "Pareto": 100,
+          "Indep": 39.0,
+          "Avg": 86.5
+        }
+      }
+    },
+    "Euclidean": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 93.0,
+        "Pareto": 100.0,
+        "Independence": 78.0,
+        "Average": 94.2
+      },
+      "rule_agreement": {
+        "Stable Voting": {
+          "identity_accu": 78.8,
+          "subset_accu": 99.8,
+          "superset_accu": 78.8
+        },
+        "Blacks": {
+          "identity_accu": 79.0,
+          "subset_accu": 100.0,
+          "superset_accu": 79.0
+        },
+        "Weak Nanson": {
+          "identity_accu": 76.4,
+          "subset_accu": 99.2,
+          "superset_accu": 76.4
+        },
+        "Baldwin": {
+          "identity_accu": 74.6,
+          "subset_accu": 98.8,
+          "superset_accu": 74.6
+        },
+        "Kemeny-Young": {
+          "identity_accu": 75.6,
+          "subset_accu": 99.6,
+          "superset_accu": 75.6
+        },
+        "Borda": {
+          "identity_accu": 75.4,
+          "subset_accu": 99.0,
+          "superset_accu": 75.4
+        },
+        "Copeland": {
+          "identity_accu": 76.8,
+          "subset_accu": 100.0,
+          "superset_accu": 76.8
+        }
+      },
+      "nwec_benchmark": {
+        "WEC n (NW,C,P)": {
+          "Anon": 100,
+          "Neut": 100,
+          "Condorcet": 97.8,
+          "Pareto": 100,
+          "Indep": 42.2,
+          "Avg": 88.0
+        }
+      }
+    }
+  },
+  "scaling_analysis": {
+    "small": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 100.0,
+        "Pareto": 100.0,
+        "Independence": 96.0,
+        "Average": 99.2
+      },
+      "setting": {
+        "voters": 10,
+        "alternatives": 3,
+        "label": "10v/3a"
+      }
+    },
+    "medium": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 99.0,
+        "Pareto": 100.0,
+        "Independence": 90.0,
+        "Average": 97.8
+      },
+      "setting": {
+        "voters": 20,
+        "alternatives": 4,
+        "label": "20v/4a"
+      }
+    },
+    "full": {
+      "axiom_satisfaction": {
+        "Anonymity": 100.0,
+        "Neutrality": 100.0,
+        "Condorcet": 97.0,
+        "Pareto": 100.0,
+        "Independence": 76.0,
+        "Average": 94.6
+      },
+      "setting": {
+        "voters": 55,
+        "alternatives": 5,
+        "label": "55v/5a"
+      }
+    }
+  },
+  "config": {
+    "architecture": "SetTransformerV3",
+    "max_num_voters": 55,
+    "max_num_alternatives": 5,
+    "election_sampling": {
+      "probmodel": "IC"
+    },
+    "num_gradient_steps": 12000,
+    "d_model": 128,
+    "n_heads": 8,
+    "d_ff": 512,
+    "n_enc_layers": 6,
+    "n_inducing": 32,
+    "dropout": 0.1,
+    "batch_size": 48,
+    "learning_rate": 0.0008,
+    "warmup_steps": 800,
+    "grad_clip": 0.5,
+    "weight_decay": 0.02,
+    "axiom_opt": {
+      "No_winner": "{'weight': 10, 'period': 'always'}",
+      "All_winners": "None",
+      "Inadmissible": "None",
+      "Resoluteness": "None",
+      "Parity": "None",
+      "Anonymity": "None",
+      "Neutrality": "None",
+      "Condorcet1": "{'weight': 2, 'period': 'always'}",
+      "Condorcet2": "None",
+      "Pareto1": "None",
+      "Pareto2": "{'weight': 1, 'period': 'always'}",
+      "Independence": "None"
+    },
+    "distance": "KLD",
+    "random_seed": 42
+  },
+  "checkpoint_path": "./results/exp3/SetTransformerV3/exp3_2026-03-25_07-38-55_IC/model.pth",
+  "eval_dataset_size": 500,
+  "sample_size_applicable": 100,
+  "timestamp": "2026-03-30_11-48-20"
+}

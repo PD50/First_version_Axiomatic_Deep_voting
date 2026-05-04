@@ -1,0 +1,176 @@
+{
+  "architecture": "SetTransformer",
+  "max_num_voters": 10,
+  "max_num_alternatives": 3,
+  "election_sampling": {
+    "probmodel": "IC"
+  },
+  "num_gradient_steps": 1000,
+  "d_model": 128,
+  "n_heads": 8,
+  "d_ff": 256,
+  "n_enc_layers": 4,
+  "dropout": 0.1,
+  "batch_size": 100,
+  "learning_rate": 0.001,
+  "axiom_opt": {
+    "No_winner": "{'weight': 10, 'period': 'always'}",
+    "All_winners": "None",
+    "Inadmissible": "None",
+    "Resoluteness": "None",
+    "Parity": "None",
+    "Anonymity": "None",
+    "Neutrality": "None",
+    "Condorcet1": "{'weight': 2, 'period': 'always'}",
+    "Condorcet2": "None",
+    "Pareto1": "None",
+    "Pareto2": "{'weight': 1, 'period': 'always'}",
+    "Independence": "None"
+  },
+  "distance": "KLD",
+  "random_seed": 42,
+  "final_axiom_satisfaction": {
+    "Anonymity": 100.0,
+    "Neutrality": 100.0,
+    "Condorcet": 96.0,
+    "Pareto": 100.0,
+    "Independence": 86.0,
+    "Average": 96.4
+  },
+  "axiom_history": {
+    "step": [
+      1000
+    ],
+    "Anonymity": [
+      100.0
+    ],
+    "Neutrality": [
+      100.0
+    ],
+    "Condorcet": [
+      93.0
+    ],
+    "Pareto": [
+      100.0
+    ],
+    "Independence": [
+      93.0
+    ],
+    "Average": [
+      97.2
+    ]
+  },
+  "loss_history": {
+    "step": [
+      0,
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900
+    ],
+    "total_loss": [
+      0.41671833395957947,
+      0.1581360399723053,
+      0.08499977737665176,
+      0.0694100558757782,
+      0.07165424525737762,
+      0.06037561595439911,
+      0.06253644824028015,
+      0.07735802233219147,
+      0.05526177957653999,
+      0.06865456700325012
+    ],
+    "loss_nw": [
+      0.06096883863210678,
+      0.0008999526617117226,
+      0.0,
+      0.0018879114650189877,
+      0.0,
+      0.000365075480658561,
+      0.001647749450057745,
+      0.0,
+      9.458064596401528e-05,
+      0.0007275998359546065
+    ],
+    "loss_cond": [
+      0.1953040063381195,
+      0.0465097576379776,
+      0.026331111788749695,
+      0.015821004286408424,
+      0.012346683070063591,
+      0.01812930218875408,
+      0.01142557617276907,
+      0.03575199842453003,
+      0.0162801630795002,
+      0.024379486218094826
+    ],
+    "loss_pareto": [
+      0.16044548153877258,
+      0.11072632670402527,
+      0.05866866558790207,
+      0.0517011433839798,
+      0.059307560324668884,
+      0.04188123717904091,
+      0.049463123083114624,
+      0.04160602018237114,
+      0.038887035101652145,
+      0.043547481298446655
+    ]
+  },
+  "runtime_sec": 329.10683703422546,
+  "nwec_benchmarks": {
+    "Blacks": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 100,
+      "Pareto": 100,
+      "Indep": 36.04,
+      "Avg": 87.2
+    },
+    "Stable Voting": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 100,
+      "Pareto": 100,
+      "Indep": 40.48,
+      "Avg": 88.1
+    },
+    "Borda": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 93.82,
+      "Pareto": 100,
+      "Indep": 37.72,
+      "Avg": 86.32
+    },
+    "Weak Nanson": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 100,
+      "Pareto": 100,
+      "Indep": 38.28,
+      "Avg": 87.68
+    },
+    "Copeland": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 100,
+      "Pareto": 100,
+      "Indep": 28.54,
+      "Avg": 85.72
+    },
+    "WEC n (NW,C,P)": {
+      "Anon": 100,
+      "Neut": 100,
+      "Condorcet": 96.78,
+      "Pareto": 100,
+      "Indep": 45.9,
+      "Avg": 88.54
+    }
+  }
+}
